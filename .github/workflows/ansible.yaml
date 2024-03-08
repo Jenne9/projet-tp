@@ -20,7 +20,7 @@ jobs:
           name: ansible.cfg
           path: ansible.cfg
           
-      - name: download arborescence
+      - name: download arbo
         uses: actions/download-artifact@v4
         with:
           path: .
@@ -31,11 +31,10 @@ jobs:
         with:
           path: .
           name: ansible.cfg
-          
       - name : debug
         run : ls -alh
       - name: execute
         run: |    
-          cd ansible/playbooks
-          ansible-playbook ./recette-docker.yml
-          ansible-playbook ./recette-opencti.yml
+          cd ansible
+          ansible-playbook playbooks./recette-docker.yml
+          ansible-playbook playbooks./recette-opencti.yml
