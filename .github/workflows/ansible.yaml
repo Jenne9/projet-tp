@@ -1,5 +1,6 @@
 name: Ansible arborescence deployement
-on: [push]
+on: 
+  push:
 jobs:
   deploy:
     runs-on: self-hosted
