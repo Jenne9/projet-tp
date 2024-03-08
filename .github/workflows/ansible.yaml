@@ -14,7 +14,7 @@ jobs:
           sudo apt install -y software-properties-common
           sudo apt-add-repository --yes --update ppa:ansible/ansible
           sudo apt install -y ansible
-          
+
       - name: upload arborescence
         uses: actions/upload-artifact@v4
         with:
@@ -44,5 +44,5 @@ jobs:
       - name: deplace
         run: |    
           cd ansible/playbooks
-          ansible-playbook ./recette-docker.yml
-          ansible-playbook ./recette-opencti.yml
+          ansible-playbook ./recette-docker.yaml
+          ansible-playbook ./recette-opencti.yaml
