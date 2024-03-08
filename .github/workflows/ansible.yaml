@@ -17,8 +17,8 @@ jobs:
       - name: upload inventory
         uses: actions/upload-artifact@v4
         with:
-          name: ./ansible.cfg
-          path: ./ansible.cfg
+          name: ansible.cfg
+          path: ansible.cfg
           
       - name: download arborescence
         uses: actions/download-artifact@v4
@@ -30,7 +30,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: .
-          name: .ansible.cfg
+          name: ansible.cfg
           
       - name : debug
         run : ls -alh
