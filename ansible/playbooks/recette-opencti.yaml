@@ -1,0 +1,6 @@
+---
+- name: Installation Docker engine
+  hosts: all
+  remote_user: root
+  roles:
+    - opencti

@@ -1,0 +1,23 @@
+---
+- name: Update apt package cache
+  apt:
+    update_cache: yes
+
+- name: Copy  daemon.json
+  copy:
+    src: ./files/daemon.json
+    dest: /etc/docker/
+
+- name: Ensure Docker service is restart
+  service:
+    name: docker
+    state: restarted
+    enabled: yes
+
+- name: Copy app OpenCTI
+  copy:
+    src: ./files/docker
+    dest: /home/ubuntu/
+    
+- name: Execute Docker Compose
+  command: docker compose -f /home/ubuntu/docker/docker-compose.yml up
