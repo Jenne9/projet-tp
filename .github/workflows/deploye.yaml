@@ -1,0 +1,40 @@
+name: Ansible arborescence deployement
+on: [push]
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: upload arborescence
+        uses: actions/upload-artifact@v4
+        with:
+          name: ansible 
+          path: ansible/ 
+          
+      - name: upload inventory
+        uses: actions/upload-artifact@v4
+        with:
+          name: .ansible.cfg
+          path: .ansible.cfg
+          
+      - name: download arborescence
+        uses: actions/download-artifact@v4
+        with:
+          path: .
+          name: ansible 
+
+      - name: download inventory
+        uses: actions/download-artifact@v4
+        with:
+          path: .
+          name: .ansible.cfg
+          
+      - name : debug
+        run : ls -alh
+      - name: execute
+        run: |    
+          cd ansible/playbooks
+          ansible-playbook ./recette-docker.yml
+          ansible-playbook ./recette-opencti.yml
