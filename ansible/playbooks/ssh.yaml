@@ -1,0 +1,7 @@
+
+---
+- name: ssh key
+  hosts: localhost
+  remote_user: root
+  roles:
+    - ssh
