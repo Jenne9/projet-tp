@@ -37,8 +37,10 @@ resource "aws_instance" "opencti" {
   tags = {
     Name = "opencti"
   }
-  
+
 }
+
+
 
 resource "aws_security_group" "app-sg" {
   name = "${random_pet.sg.id}-sg"
