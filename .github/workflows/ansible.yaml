@@ -39,7 +39,10 @@ jobs:
         with:
           path: .
           name: ansible.cfg
-      - name : debug
+      - name : debug1
+        run : pwd
+          
+      - name : debug2
         run : ls -alh
 
       - name: deplace
