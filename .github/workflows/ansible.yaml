@@ -48,6 +48,6 @@ jobs:
 
       - name: deplace
         run: |    
-          cd ansible/playbooks
+          ansible-playbook -i /etc/hosts ./ssh.yaml
           ansible-playbook -i /etc/hosts ./recette-docker.yaml
           ansible-playbook -i /etc/hosts ./recette-opencti.yaml
