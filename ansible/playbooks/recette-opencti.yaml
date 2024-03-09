@@ -1,6 +1,6 @@
 ---
 - name: Installation Docker engine
-  hosts: 52.47.152.116
+  hosts: opencti
   remote_user: root
   roles:
     - opencti
