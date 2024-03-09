@@ -1,0 +1,30 @@
+---
+name: Mount a disk
+on: 
+  push:
+  workflow_dispatch:
+jobs:
+  configure-disk:
+    runs-on: ubuntu-latest
+  
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+  
+    - name: List block devices
+      run: lsblk
+  
+    - name: Partition disk
+      run: |
+        echo -e "n\np\n\n\n\nw" | sudo fdisk /dev/xvdf
+  
+    - name: Format partition
+      run: sudo mkfs -t ext4 /dev/xvdf1
+  
+    - name: Mount partition
+      run: |
+        sudo mkdir -p /home/ubuntu
+        sudo mount /dev/xvdf1 /home/ubuntu
+  
+    - name: Update fstab
+      run: echo "/dev/xvdf1 /home/ubuntu ext4 defaults 0 0" | sudo tee -a /etc/fstab
