@@ -21,7 +21,8 @@ jobs:
     - name: Install Ansible
       run: |
         pip install ansible
-        pip install botocore boto3
+        pip install botocore 
+        pip install boto3
 
     - name: upload folder
       uses: actions/upload-artifact@v4
