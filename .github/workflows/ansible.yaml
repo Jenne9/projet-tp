@@ -15,7 +15,7 @@ jobs:
           sudo apt install -y software-properties-common
           sudo apt-add-repository --yes --update ppa:ansible/ansible
           sudo apt install -y ansible
-          sudo pip install boto3 botocore
+
 
       - name: upload arborescence
         uses: actions/upload-artifact@v4
