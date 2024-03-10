@@ -1,1 +1,1 @@
-opencti ansible_host=15.237.174.127 ansible_user=root ansible_python_interpreter=/usr/bin/python
+opencti ansible_host=15.237.174.127 ansible_user=root ansible_python_interpreter=auto
