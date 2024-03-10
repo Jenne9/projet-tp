@@ -1,5 +1,5 @@
 ---
-  name: Ansible arborescence deployement
+  name: add ssh key
   on: 
     #push:
     workflow_dispatch:
@@ -10,7 +10,7 @@
       - name: Copy SSH key to EC2
         uses: appleboy/ssh-action@master
         with:
-          host:  # L'adresse IP ou le nom DNS de votre instance EC2
+          host: 35.181.49.205 # L'adresse IP ou le nom DNS de votre instance EC2
           username: root
           key: ${{ secrets.TF_SSH_KEY }} # Clé privée SSH pour l'authentification
           script: |
