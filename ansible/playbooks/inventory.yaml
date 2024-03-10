@@ -1,0 +1,3 @@
+hosts:
+   opencti:
+      ansible_host: 35.181.49.205
