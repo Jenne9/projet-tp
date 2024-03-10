@@ -1,9 +1,7 @@
 name: Run Ansible Playbook
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -12,17 +10,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.11'
-
-    - name: Install Ansible
-      run: |
-        pip install ansible
-        pip install botocore 
-        pip install boto3
 
     - name: upload folder
       uses: actions/upload-artifact@v4

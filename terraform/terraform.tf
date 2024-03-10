@@ -36,6 +36,17 @@ resource "aws_instance" "opencti" {
   tags = {
     Name = "opencti"
   }
+  user_data = <<-EOF
+              #!/bin/bash
+              sudo apt update
+              sudo apt install -y software-properties-common
+              sudo apt-add-repository --yes --update ppa:ansible/ansible
+              sudo apt install -y ansible
+              sudo install python3-pip
+              sudo install botocore
+              sudo install boto3
+              EOF
+              
 
 }
 
