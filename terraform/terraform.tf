@@ -37,18 +37,6 @@ resource "aws_instance" "opencti" {
   tags = {
     Name = "opencti"
   }
-  connection {
-    type     = "ssh"
-    user     = "root"
-    private_key = file("/Users/macbookpro/.ssh/id_rsa.pub")
-    host     = self.public_ip
-  }
-
-  provisioner "remote-exec" {
-    inline = [
-      "echo ${var.ssh_public_key} >> /root/.ssh/authorized_keys"
-    ]
-  }
 }
 
 resource "aws_security_group" "app-sg" {
