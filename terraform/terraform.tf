@@ -40,7 +40,7 @@ resource "aws_instance" "opencti" {
   connection {
     type     = "ssh"
     user     = "root"
-    private_key = file("~/.ssh/id_rsa.pub")
+    private_key = file("/Users/macbookpro/.ssh/id_rsa.pub")
     host     = self.public_ip
   }
 
