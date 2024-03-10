@@ -3,4 +3,4 @@ all:
     opencti:
       ansible_host: 35.181.49.205
       ansible_user: root
-      ansible_python_interpreter: /usr/bin/python3
+      ansible_python_interpreter: /opt/pipx/venvs/ansible-core/bin/python
