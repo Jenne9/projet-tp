@@ -39,6 +39,7 @@ jobs:
 
     - name: Run Ansible playbook
       run: |
-        ansible-playbook -i ansible/playbooks/etc/inventory.yaml ansible/playbooks/recette-docker.yaml
+        cd ansible/playbooks
+        ansible-playbook -i /etc/hosts ./recette-docker.yaml
 
       # Replace 'playbook.yml' with the name of your Ansible playbook file

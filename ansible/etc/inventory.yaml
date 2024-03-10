@@ -1,7 +1,0 @@
-all:
-   hosts:
-      35.181.49.205:
-   vars:
-      ansible_user: root
-
-         

@@ -16,7 +16,6 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
-
 resource "aws_volume_attachment" "ebs_attachment" {
   device_name = "/dev/xvdf"  # Nom du périphérique sur l'instance (peut varier selon l'OS)
   instance_id = aws_instance.opencti.id
@@ -37,6 +36,7 @@ resource "aws_instance" "opencti" {
   tags = {
     Name = "opencti"
   }
+
 }
 
 resource "aws_security_group" "app-sg" {
