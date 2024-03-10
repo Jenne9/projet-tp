@@ -1,1 +1,1 @@
-opencti ansible_host=13.38.54.119 ansible_user=root ansible_python_interpreter=/usr/bin/python3
+opencti ansible_host=15.237.174.127 ansible_user=root ansible_python_interpreter=/usr/bin/python3

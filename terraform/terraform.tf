@@ -43,8 +43,8 @@ resource "aws_instance" "opencti" {
               sudo apt-add-repository --yes --update ppa:ansible/ansible
               sudo apt install -y ansible
               sudo apt install -y python3-pip
-              sudo apt install -y botocore
-              sudo apt install -y boto3
+              sudo pip install botocore
+              sudo pip install boto3
               EOF
               
 
