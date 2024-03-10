@@ -40,7 +40,7 @@ jobs:
 
     - name: Run Ansible playbook
       run: |
-        
+        ansible-playbook -i ansible/etc/hosts ansible/playbooks/./ssh.yaml
         ansible-playbook -i ansible/etc/hosts ansible/playbooks/./recette-docker.yaml
 
       # Replace 'playbook.yml' with the name of your Ansible playbook file
