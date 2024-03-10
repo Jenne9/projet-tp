@@ -26,5 +26,5 @@ jobs:
       env:
         ANSIBLE_HOST_KEY_CHECKING: True
       run: |
-        ansible-playbook -i '35.181.49.205,' ./ansible/playbooks/recette-docker.yaml
+        ansible-playbook -i /etc/host ./ansible/playbooks/recette-docker.yaml
       # Replace 'playbook.yml' with the name of your Ansible playbook file
