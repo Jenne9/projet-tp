@@ -1,1 +1,1 @@
-opencti ansible_host=52.47.166.65 ansible_user=root
+opencti ansible_host=52.47.166.65 ansible_user=root ansible_interpeter=/usr/local/bin/python3.12
