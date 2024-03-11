@@ -1,1 +1,1 @@
-localhost ansible_host=15.237.174.127 ansible_user=root ansible_python_interpreter=/usr/lib/python3/dist-packages/
+localhost ansible_host=15.237.174.127 ansible_user=root ansible_python_interpreter=/usr/local/lib/python3.8
