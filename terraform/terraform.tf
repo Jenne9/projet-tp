@@ -24,7 +24,7 @@ resource "aws_volume_attachment" "ebs_attachment" {
 
 resource "aws_ebs_volume" "ebs" {
   availability_zone = aws_instance.opencti.availability_zone
-  size              = 20  # Taille du volume en GiB
+  size              = 10  # Taille du volume en GiB
   type              = "gp2"  # Type de volume
 }
 
