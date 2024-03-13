@@ -23,7 +23,7 @@ jobs:
         path: ~/docker
 
     -  name: Display directory content
-       run : cp daemon.json /etc/docker/ && sudo systemctl daemon-reload
+       run : sudo cp daemon.json /etc/docker/ && sudo systemctl daemon-reload
 
     - name: Execute docker compose 
       run : cd docker/opencti-prod && sudo docker compose up
