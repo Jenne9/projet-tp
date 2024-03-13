@@ -26,6 +26,6 @@ jobs:
     #  run : ls -a ~/home/ubuntu
 
     - name: Execute docker compose 
-      run : cd opencti-prod && docker compose up -d
+      run : cd opencti-prod && sudo docker compose up -d
 
 
