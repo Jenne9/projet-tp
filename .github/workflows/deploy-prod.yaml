@@ -20,7 +20,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: opencti-prod
-        path: .
+        path: opencti-prod
 
     - name: Display directory content
       run : ls -a ~/home/ubuntu
