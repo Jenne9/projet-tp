@@ -14,12 +14,12 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: opencti-prod
-        path: ./opencti-prod
+        path: .
 
     - name: download inventory
       uses: actions/download-artifact@v4
       with:
-        name: opencti-prdo
+        name: opencti-prod
         path: ~/home/ubuntu
 
     - name: Display directory content
