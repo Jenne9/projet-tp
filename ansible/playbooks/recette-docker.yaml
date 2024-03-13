@@ -1,6 +1,0 @@
----
-- name: Installation Docker engine
-  hosts: localhost
-  remote_user: root
-  roles:
-    - docker

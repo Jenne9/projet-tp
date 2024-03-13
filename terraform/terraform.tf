@@ -38,16 +38,13 @@ resource "aws_instance" "opencti" {
   }
   user_data = <<-EOF
               #!/bin/bash
+              sudo apt update,
+              sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+              curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+              sudo add-apt-repository 'deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable'
               sudo apt update
-              sudo apt install -y software-properties-common
-              sudo apt-add-repository --yes --update ppa:ansible/ansible
-              sudo apt install -y ansible
-              sudo apt install -y python3-pip
-              sudo pip3 install botocore
-              sudo pip3 install boto3
+              sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
               EOF
-              
-
 }
 
 resource "aws_security_group" "app-sg" {
