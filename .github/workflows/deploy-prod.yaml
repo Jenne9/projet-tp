@@ -20,12 +20,12 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: opencti-prod
-        path: ~/
+        path: ~/docker
 
     -  name: Display directory content
        run : cp daemon.json /etc/docker/ && sudo systemctl daemon-reload
 
     - name: Execute docker compose 
-      run : cd opencti-prod && sudo docker compose up
+      run : cd docker/opencti-prod && sudo docker compose up
 
 
