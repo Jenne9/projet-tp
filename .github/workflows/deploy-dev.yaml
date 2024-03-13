@@ -1,10 +1,14 @@
-name: Run Ansible Playbook
+name: Deploy to dev
 on:
+  push:
+    branches:
+      - dev
   workflow_dispatch:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: dev
+    environment:
+      name: dev
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -13,7 +17,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: opencti-dev
-        path: .
+        path: ./opencti-dev
 
     - name: download inventory
       uses: actions/download-artifact@v4
@@ -21,7 +25,7 @@ jobs:
         name: opencti-dev
         path: ~/home/ubuntu
 
-    - name: where
+    - name: Display directory content
       run : ls -a ~/home/ubuntu
 
 
