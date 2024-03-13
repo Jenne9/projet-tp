@@ -22,8 +22,8 @@ jobs:
         name: opencti-prod
         path: ubuntu/
 
-    - name: Display directory content
-      run : ls -a ~/home/ubuntu
+    #- name: Display directory content
+    #  run : ls -a ~/home/ubuntu
 
     - name: Execute docker compose 
       run : cd opencti-prod && docker compose up -d
