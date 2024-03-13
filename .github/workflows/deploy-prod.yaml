@@ -20,12 +20,12 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: opencti-prod
-        path: opencti-prod/
+        path: ubuntu/
 
     - name: Display directory content
       run : ls -a ~/home/ubuntu
 
     - name: Execute docker compose 
-      run : cd ~/home/ubuntu/opencti-prod && docker compose up -d
+      run : cd opencti-prod && docker compose up -d
 
 
