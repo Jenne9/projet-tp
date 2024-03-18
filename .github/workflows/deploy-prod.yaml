@@ -3,7 +3,7 @@ on: workflow_dispatch
   
 jobs:
   deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     environment:
       name: prod
     steps:
